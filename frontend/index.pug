@@ -1,0 +1,53 @@
+doctype html 
+html(lang="en") 
+head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      meta(http-equiv='X-UA-Compatible' content='ie=edge')
+      title= title
+      link(rel='stylesheet' type="text/css" href='/css/style.css')
+    
+body
+
+   
+    button(type="submit") Delete Customer
+    button(type="submit") Update Customer
+    div
+        form(id="login" action="/add_user" method="post")
+            div
+                | name:
+                input(type='text', name='name', value='')
+            div
+                | email:
+                input(type='text', name='email', value='')
+            div
+                | phonenumber:
+                input(type='text', name='phonenumber', value='')
+
+    
+            input(type="submit" value="Add user" onClick="window.location.reload()")
+    
+      
+
+     
+    table(width='100%', cellspacing='0', cellpadding='0', border='0', bgcolor='#F2F2F2')
+        thead
+            tr
+                th id
+                th name
+                th email
+                th phonenumber
+        tbody
+            each task in results_select.rows
+                tr
+                    td #{task.id}
+                    td #{task.name}
+                    td #{task.email}
+                    td #{task.phonenumber}
+
+                                                                                    
+ 
+
+script.
+    const formLogin = document.querySelector('#form-login');
+
